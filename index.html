@@ -1,5 +1,4 @@
-
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
@@ -128,6 +127,11 @@
             box-shadow: 0 0 30px rgba(251, 191, 36, 0.4);
             transform: scale(1.02);
         }
+
+        /* Modal Styles */
+        #imageModal {
+            transition: opacity 0.3s ease;
+        }
     </style>
 </head>
 <body class="antialiased selection:bg-amber-500 selection:text-black">
@@ -168,6 +172,7 @@
                         <div class="ml-10 flex items-baseline space-x-8">
                             <a href="#home" class="hover:text-amber-400 transition-colors px-3 py-2 rounded-md text-sm font-medium">Home</a>
                             <a href="#services" class="hover:text-amber-400 transition-colors px-3 py-2 rounded-md text-sm font-medium">Services</a>
+                            <a href="#portfolio" class="hover:text-amber-400 transition-colors px-3 py-2 rounded-md text-sm font-medium">Our Work</a>
                             <a href="#reviews" class="hover:text-amber-400 transition-colors px-3 py-2 rounded-md text-sm font-medium">Reviews</a>
                             <a href="#contact" class="hover:text-amber-400 transition-colors px-3 py-2 rounded-md text-sm font-medium">Contact</a>
                         </div>
@@ -199,6 +204,7 @@
                 <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
                     <a href="#home" class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Home</a>
                     <a href="#services" class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Services</a>
+                    <a href="#portfolio" class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Our Work</a>
                     <a href="#reviews" class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Reviews</a>
                     <a href="#contact" class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Contact</a>
                     <a href="tel:+923006174014" class="text-amber-500 block px-3 py-2 rounded-md text-base font-bold">Call +92 300 6174014</a>
@@ -333,6 +339,46 @@
             </div>
         </section>
 
+        <!-- PORTFOLIO SECTION (OUR WORK) -->
+        <section id="portfolio" class="py-24 bg-black/60 backdrop-blur-sm">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <span class="text-amber-500 font-bold tracking-wider uppercase">Portfolio</span>
+                    <h2 class="text-3xl md:text-5xl font-bold mt-2">Our Studio Work</h2>
+                    <p class="text-gray-300 mt-4 max-w-2xl mx-auto">Click on any image to see the details of our premium albums and photography.</p>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- Portfolio Item 1 -->
+                    <div class="relative group cursor-pointer overflow-hidden rounded-2xl h-80" onclick="openModal('https://images.unsplash.com/photo-1544376798-89aa6b82c6cd?auto=format&fit=crop&q=80&w=800')">
+                        <img src="https://images.unsplash.com/photo-1544376798-89aa6b82c6cd?auto=format&fit=crop&q=80&w=800" alt="Wedding Album" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center">
+                            <h3 class="text-2xl font-bold text-white mb-2">Wedding Albums</h3>
+                            <p class="text-amber-400">View Collection</p>
+                        </div>
+                    </div>
+
+                    <!-- Portfolio Item 2 -->
+                    <div class="relative group cursor-pointer overflow-hidden rounded-2xl h-80" onclick="openModal('https://images.unsplash.com/photo-1520854221256-17451cc330e7?auto=format&fit=crop&q=80&w=800')">
+                        <img src="https://images.unsplash.com/photo-1520854221256-17451cc330e7?auto=format&fit=crop&q=80&w=800" alt="Portrait Photography" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center">
+                            <h3 class="text-2xl font-bold text-white mb-2">Portrait Studio</h3>
+                            <p class="text-amber-400">View Collection</p>
+                        </div>
+                    </div>
+
+                    <!-- Portfolio Item 3 -->
+                    <div class="relative group cursor-pointer overflow-hidden rounded-2xl h-80" onclick="openModal('https://images.unsplash.com/photo-1513519245088-0e12902e5a38?auto=format&fit=crop&q=80&w=800')">
+                        <img src="https://images.unsplash.com/photo-1513519245088-0e12902e5a38?auto=format&fit=crop&q=80&w=800" alt="Wall Art" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center">
+                            <h3 class="text-2xl font-bold text-white mb-2">Wall Art & Framing</h3>
+                            <p class="text-amber-400">View Collection</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- Why Choose Us -->
         <section class="py-20 relative overflow-hidden">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col lg:flex-row items-center gap-16">
@@ -397,6 +443,38 @@
                 
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     <!-- Review 1 -->
+                    <div class="p-8 rounded-2xl bg-zinc-900/80 border border-white/5 hover:border-amber-500/50 transition-colors shadow-lg">
+                        <div class="flex text-amber-400 mb-4">
+                            <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                            <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                            <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                            <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                            <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        </div>
+                        <p class="text-gray-300 italic mb-4">"The photo quality is true HD – so clear and vibrant – and the frame finishing is just beautiful. Their prices are also very reasonable for such amazing work."</p>
+                        <div class="flex items-center gap-3">
+                            <div class="w-8 h-8 rounded-full bg-amber-600 flex items-center justify-center text-xs font-bold">A</div>
+                            <span class="text-sm font-semibold">Ali K.</span>
+                        </div>
+                    </div>
+
+                    <!-- Review 2 -->
+                    <div class="p-8 rounded-2xl bg-zinc-900/80 border border-white/5 hover:border-red-500/50 transition-colors shadow-lg">
+                        <div class="flex text-amber-400 mb-4">
+                            <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                            <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                            <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                            <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                            <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        </div>
+                        <p class="text-gray-300 italic mb-4">"Very great experience. Their quality and art of work is amazing. Highly recommended for any printing needs."</p>
+                        <div class="flex items-center gap-3">
+                            <div class="w-8 h-8 rounded-full bg-red-600 flex items-center justify-center text-xs font-bold">F</div>
+                            <span class="text-sm font-semibold">Fatima R.</span>
+                        </div>
+                    </div>
+
+                    <!-- Review 3 -->
                     <div class="p-8 rounded-2xl bg-zinc-900/80 border border-white/5 hover:border-amber-500/50 transition-colors shadow-lg">
                         <div class="flex text-amber-400 mb-4">
                             <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
@@ -476,18 +554,54 @@
                 </div>
                 
                 <div class="flex justify-center space-x-6 mb-8">
-                    <a href="#" class="text-gray-500 hover:text-white transition-colors">Instagram</a>
-                    <a href="#" class="text-gray-500 hover:text-white transition-colors">Facebook</a>
-                    <a href="#" class="text-gray-500 hover:text-white transition-colors">WhatsApp</a>
+                    <!-- Added actual Instagram link and social placeholders -->
+                    <a href="https://www.instagram.com/hasansultan8757" target="_blank" class="text-gray-500 hover:text-white transition-colors">Instagram</a>
+                    <a href="https://www.facebook.com" target="_blank" class="text-gray-500 hover:text-white transition-colors">Facebook</a>
+                    <a href="https://wa.me/923006174014" target="_blank" class="text-gray-500 hover:text-white transition-colors">WhatsApp</a>
                 </div>
                 
                 <p class="text-gray-600 text-sm">
-                    &copy; 2026 Classic Digital Printing. All rights reserved.<br />
-                    
+                    &copy; 2024 Classic Digital Printing. All rights reserved.<br />
+                    Designed with inspiration from imlink.network
                 </p>
             </div>
         </footer>
     </div> <!-- End Content Wrapper -->
+
+    <!-- Gallery Modal -->
+    <div id="imageModal" class="fixed inset-0 z-50 hidden bg-black/90 backdrop-blur-sm flex items-center justify-center p-4" onclick="closeModal()">
+        <div class="relative max-w-5xl w-full h-full max-h-[85vh] flex items-center justify-center" onclick="event.stopPropagation()">
+             <button onclick="closeModal()" class="absolute -top-10 right-0 text-white hover:text-amber-500 transition-colors">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+            <img id="modalImage" src="" alt="Full View" class="max-w-full max-h-full object-contain rounded-lg shadow-2xl border border-white/10">
+        </div>
+    </div>
+
+    <script>
+        function openModal(imageSrc) {
+            const modal = document.getElementById('imageModal');
+            const modalImg = document.getElementById('modalImage');
+            modalImg.src = imageSrc;
+            modal.classList.remove('hidden');
+            document.body.style.overflow = 'hidden'; // Prevent scrolling
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('imageModal');
+            modal.classList.add('hidden');
+            document.body.style.overflow = 'auto'; // Restore scrolling
+        }
+
+        // Close modal on escape key
+        document.addEventListener('keydown', function(event) {
+            if (event.key === "Escape") {
+                closeModal();
+            }
+        });
+    </script>
 
 </body>
 </html>
