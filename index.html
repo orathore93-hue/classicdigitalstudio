@@ -64,6 +64,29 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
+        /* New Unique Logo Animation */
+        @keyframes welcome-float {
+            0% { 
+                transform: translateY(0) scale(1); 
+                box-shadow: 0 0 20px rgba(245, 158, 11, 0.1); /* Low amber glow */
+                filter: brightness(1);
+            }
+            50% { 
+                transform: translateY(-10px) scale(1.02); 
+                box-shadow: 0 0 40px rgba(245, 158, 11, 0.3); /* High amber glow */
+                filter: brightness(1.1);
+            }
+            100% { 
+                transform: translateY(0) scale(1); 
+                box-shadow: 0 0 20px rgba(245, 158, 11, 0.1);
+                filter: brightness(1);
+            }
+        }
+
+        .welcome-logo {
+            animation: welcome-float 5s ease-in-out infinite;
+        }
+
         /* Infinite Scroll Animation for Reviews */
         @keyframes scroll-left {
             0% { transform: translateX(0); }
@@ -200,6 +223,14 @@
             </div>
 
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+                
+                <div class="mb-10 flex justify-center animate-fade-in-up">
+                    <div class="relative w-36 h-36 md:w-48 md:h-48 rounded-full p-1 bg-gradient-to-tr from-amber-500/50 to-transparent welcome-logo">
+                        <div class="w-full h-full rounded-full overflow-hidden bg-black border-4 border-black/50 relative z-10">
+                            <img src="logo.jpg" alt="Classic Digital Big Logo" class="w-full h-full object-cover transform hover:scale-105 transition-transform duration-700">
+                        </div>
+                    </div>
+                </div>
                 <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 border border-white/10 mb-6 animate-fade-in-up backdrop-blur-md">
                     <span class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
                     <span class="text-xs font-medium tracking-wide text-gray-200 uppercase shadow-sm">Open Now • Closes 11.30 PM</span>
