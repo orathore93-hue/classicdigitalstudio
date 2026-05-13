@@ -717,8 +717,10 @@
         <!-- Contact Section -->
         <section id="contact" class="py-20">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="glass-card rounded-3xl p-8 md:p-12 text-center md:text-left flex flex-col md:flex-row items-center gap-12">
-                    <div class="md:w-1/2">
+                <div class="glass-card rounded-3xl p-8 md:p-12 text-center md:text-left flex flex-col md:flex-row items-center gap-12 relative overflow-hidden">
+                    <img src="images/studio-ext.png" alt="Classic Digital Studio" class="absolute inset-0 w-full h-full object-cover opacity-40">
+                    <div class="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-black/40"></div>
+                    <div class="md:w-1/2 relative z-10">
                         <h2 class="text-3xl md:text-4xl font-bold mb-6">Visit Our Lab</h2>
                         <div class="space-y-4">
                             <div class="flex items-start gap-4">
@@ -754,18 +756,9 @@
                         </div>
                     </div>
 
-                    <div class="md:w-1/2 w-full space-y-4">
-                        <div class="h-48 md:h-56 rounded-2xl overflow-hidden relative group">
-                            <img src="images/studio-ext.png" alt="Classic Digital Studio, Anarkali Bazaar Lahore" class="w-full h-full object-cover opacity-90 group-hover:opacity-100 transition-opacity duration-500">
-                            <div class="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent"></div>
-                            <div class="absolute bottom-4 left-4">
-                                <p class="text-amber-500 font-bold text-xs tracking-wider uppercase">Our Studio</p>
-                            </div>
-                        </div>
-                        <div class="h-48 md:h-56 bg-gray-800 rounded-2xl overflow-hidden relative group">
-                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d435.2472674082247!2d74.31687053531631!3d31.565809747970977!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39191b45c26b5d95%3A0x6b8d960714197e42!2sClassic%20Digital%20Printing!5e0!3m2!1sen!2s!4v1710275000000!5m2!1sen!2s" width="100%" height="100%" style="border:0; filter: grayscale(100%) invert(90%);" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="group-hover:filter-none transition-all duration-500"></iframe>
-                            <div class="absolute inset-0 pointer-events-none border-4 border-white/5 rounded-2xl"></div>
-                        </div>
+                    <div class="md:w-1/2 w-full h-64 md:h-80 bg-gray-800 rounded-2xl overflow-hidden relative group z-10">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d435.2472674082247!2d74.31687053531631!3d31.565809747970977!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39191b45c26b5d95%3A0x6b8d960714197e42!2sClassic%20Digital%20Printing!5e0!3m2!1sen!2s!4v1710275000000!5m2!1sen!2s" width="100%" height="100%" style="border:0; filter: grayscale(100%) invert(90%);" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="group-hover:filter-none transition-all duration-500"></iframe>
+                        <div class="absolute inset-0 pointer-events-none border-4 border-white/5 rounded-2xl"></div>
                     </div>
                 </div>
             </div>
